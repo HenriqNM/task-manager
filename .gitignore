@@ -1,0 +1,9 @@
+# PyCharm / JetBrains IDE settings
+.idea/
+*.iml
+out/
+
+# Virtual Environment
+.venv/
+venv/
+
