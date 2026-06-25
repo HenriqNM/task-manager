@@ -44,7 +44,7 @@ def delete_task(list_name: str, task_id: int) -> dict:
 
 @app.delete("/lists/{list_name}")
 def delete_list(list_name: str) -> dict:
-    success = manager.delete_task(list_name)
+    success = manager.delete_list(list_name)
     if not success:
         raise HTTPException(status_code=404, detail="List not found")
     return {"message": f"List '{list_name}' deleted."}
