@@ -34,3 +34,18 @@ class TaskManager:
 
         self.storage[list_name][task_id]["completed"] = True
         return True
+
+    def delete_task(self, list_name: str, task_id: str) -> bool:
+        if list_name not in self.storage:
+            return False
+        if task_id not in self.storage[list_name]:
+            return False
+
+        del self.storage[list_name][task_id]
+        return True
+
+    def delete_list(self, list_name: str) -> bool:
+        if list_name not in self.storage:
+            return False
+        del self.storage[list_name]
+        return True
